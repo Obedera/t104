@@ -1,0 +1,122 @@
+body{
+    background-color: orangered;
+    display: grid;
+    font-family: 'Ubuntu', sans-serif;
+    grid-template-areas:'nav nav nav nav'
+                        'header section segunda div'
+                        'footer footer footer footer'; 
+    grid-template-rows: 20vh 70vh 40vh;
+    margin: 0;
+}
+header{
+    background-color:darkred;
+    grid-area: header;
+}
+div{
+    background-color: black;
+    grid-area: div;
+}
+
+div,section h2,p{
+    color: darkred;
+}
+
+
+nav{
+    background-color: black;
+    border-bottom: 1px solid red; 
+    display: flex;
+    grid-area: nav;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header, section, .segunda, div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+}
+
+header, .segunda h2,p{
+    color: black;
+}
+nav a{
+    color: darkred;
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: red;
+    transition: 1.3s;
+}
+img{
+    border: 2px solid red;
+    border-radius: 10%;
+    height: 200px;
+    width: 200px;
+}
+
+section{
+    grid-area: section;
+    background-color: black;
+}
+.segunda{
+    grid-area: segunda;
+    background-color: darkred;
+}
+
+footer{
+    grid-area: footer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+}
+aside{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* @media - para telas; () - condição; serve para ajustar o css para outros tipos de tela exemplo celulares */
+/* and = e; not = não; only =  */
+/* coloca no final */
+
+@media (max-width: 768px){
+    body{
+        grid-template-areas:'nav'
+                            'header'
+                            'section'
+                            'segunda'
+                            'div'
+                            'footer';
+        grid-template-rows: 20vh 70vh 70vh 70vh 70vh 100vh;
+    }
+    aside{
+        flex-direction: column;
+    }
+    nav{
+        flex-direction: column;
+    }
+    /* nav a{
+        display: none;
+    } */
+}
+
+
+/* @media (max-width: 600px){
+    @media (orientation:landscape){
+        header{
+            background-color: red;
+        }
+
+    }
+    header{
+        background-color: blue;
+    }
+} */
